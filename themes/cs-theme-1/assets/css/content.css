@@ -1,0 +1,92 @@
+/* Regras dos templates e áreas de conteúdo nativo. */
+.cs-page {
+	padding-block: clamp(2rem, 5vw, 5rem);
+}
+
+.cs-entry-header h1,
+.cs-page > h1,
+.cs-post-summary h2,
+.cs-comments h2 {
+	margin-block: 0 .6em;
+	font-family: var(--cs-heading-font);
+	line-height: 1.15;
+	overflow-wrap: anywhere;
+}
+
+.cs-entry-header h1,
+.cs-page > h1 {
+	font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.cs-entry-header img,
+.cs-post-summary img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	margin-block-end: 1.5rem;
+}
+
+.cs-entry-content {
+	display: flow-root;
+	overflow-wrap: anywhere;
+}
+
+.cs-entry-content > .alignwide {
+	max-width: var(--cs-width);
+	margin-inline: auto;
+}
+
+.cs-entry-content > .alignfull {
+	max-width: none;
+	margin-inline: calc(-1 * var(--cs-gutter));
+}
+
+.cs-post-list {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+	gap: 1.25rem;
+	margin-block: 1.5rem;
+}
+
+.cs-post-summary {
+	padding: 1.25rem;
+	border: 1px solid var(--cs-peach);
+	border-radius: .75rem;
+	background: var(--cs-white);
+	overflow-wrap: anywhere;
+}
+
+.cs-post-summary a,
+.cs-page-links a,
+.cs-page > p a {
+	color: inherit;
+}
+
+.cs-comments {
+	margin-block: 2rem;
+}
+
+.cs-comments .comment-list,
+.cs-comment-list {
+	overflow-wrap: anywhere;
+}
+
+.cs-header .custom-logo,
+.cs-footer .custom-logo {
+	display: block;
+	width: auto;
+	max-width: min(11rem, 100%);
+	max-height: 3rem;
+	object-fit: contain;
+}
+
+/* O alinhamento total dos blocos pode alcançar as bordas da página. */
+@supports (width: 1cqw) {
+	.cs-singular {
+		container-type: inline-size;
+	}
+
+	.cs-entry-content > .alignfull {
+		margin-inline: calc((100% - 100cqw) / 2);
+	}
+}

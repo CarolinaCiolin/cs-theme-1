@@ -1,0 +1,16 @@
+/* Fontes variáveis locais, subconjunto latino com os caracteres alemães. */
+@font-face {
+	font-family: Archivo;
+	src: url('../fonts/archivo-latin.woff2') format('woff2');
+	font-weight: 400 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'DM Sans';
+	src: url('../fonts/dm-sans-latin.woff2') format('woff2');
+	font-weight: 400 700;
+	font-style: normal;
+	font-display: swap;
+}

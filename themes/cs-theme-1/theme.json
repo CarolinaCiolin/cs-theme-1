@@ -1,0 +1,85 @@
+{
+  "$schema": "https://schemas.wp.org/wp/6.6/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "layout": {
+      "contentSize": "760px",
+      "wideSize": "1280px"
+    },
+    "color": {
+      "defaultPalette": false,
+      "palette": [
+        {
+          "name": "Creme",
+          "slug": "cream",
+          "color": "#FFFAF5"
+        },
+        {
+          "name": "Weiß",
+          "slug": "white",
+          "color": "#FFFFFF"
+        },
+        {
+          "name": "Graphit",
+          "slug": "graphite",
+          "color": "#17181A"
+        },
+        {
+          "name": "Textgraphit",
+          "slug": "text",
+          "color": "#1B1B1D"
+        },
+        {
+          "name": "Orange",
+          "slug": "orange",
+          "color": "#FF6A1A"
+        },
+        {
+          "name": "Pfirsich",
+          "slug": "peach",
+          "color": "#FFE8D4"
+        }
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "name": "Archivo",
+          "slug": "archivo",
+          "fontFamily": "Archivo, system-ui, sans-serif"
+        },
+        {
+          "name": "DM Sans",
+          "slug": "dm-sans",
+          "fontFamily": "\"DM Sans\", system-ui, sans-serif"
+        }
+      ]
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "var:preset|color|cream",
+      "text": "var:preset|color|text"
+    },
+    "typography": {
+      "fontFamily": "var:preset|font-family|dm-sans"
+    },
+    "elements": {
+      "heading": {
+        "typography": {
+          "fontFamily": "var:preset|font-family|archivo"
+        }
+      },
+      "button": {
+        "border": {
+          "radius": "999px"
+        },
+        "color": {
+          "background": "var:preset|color|orange",
+          "text": "var:preset|color|graphite"
+        }
+      }
+    }
+  }
+}

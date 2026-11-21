@@ -1,0 +1,183 @@
+/* Cabeçalho, painel responsivo e rodapé. */
+.cs-header,
+.cs-footer,
+.cs-menu-panel {
+	background: var(--cs-graphite);
+	color: var(--cs-white);
+}
+
+.cs-header__inner {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: .75rem;
+	padding-block: .9rem;
+}
+
+.cs-brand {
+	color: inherit;
+	font: 750 1.125rem / 1.2 var(--cs-heading-font);
+	text-decoration: none;
+	overflow-wrap: anywhere;
+}
+
+.cs-header__cta {
+	margin-inline-start: auto;
+	font-size: .875rem;
+}
+
+.cs-menu {
+	display: flex;
+	flex-wrap: wrap;
+	gap: .25rem 1rem;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.cs-menu a {
+	display: inline-flex;
+	align-items: center;
+	min-height: 2.75rem;
+	color: inherit;
+	text-decoration: none;
+}
+
+.cs-menu a:hover,
+.cs-menu a[aria-current="page"],
+.cs-brand:hover {
+	text-decoration: underline;
+	text-underline-offset: .25em;
+}
+
+.cs-header__navigation {
+	order: 1;
+	width: 100%;
+}
+
+.cs-header__navigation[hidden],
+.cs-menu-control[hidden] {
+	display: none;
+}
+
+.cs-menu-control {
+	min-height: 2.75rem;
+	padding: .35rem .75rem;
+	border: 1px solid currentColor;
+	border-radius: var(--cs-pill);
+	background: transparent;
+	color: inherit;
+	font: inherit;
+	cursor: pointer;
+}
+
+.cs-menu-control:hover {
+	background: var(--cs-peach);
+	color: var(--cs-graphite);
+}
+
+.cs-menu-panel {
+	box-sizing: border-box;
+	position: fixed;
+	inset: 0 0 0 auto;
+	width: min(100%, 24rem);
+	max-width: 100%;
+	height: 100%;
+	max-height: none;
+	margin: 0;
+	padding: 1.25rem;
+	border: 0;
+	overflow-y: auto;
+	overscroll-behavior: contain;
+}
+
+.cs-menu-panel:not([open]) {
+	display: none;
+}
+
+.cs-menu-panel[open] {
+	animation: cs-panel-enter .2s ease-out;
+}
+
+.cs-menu-panel::backdrop {
+	background: rgb(23 24 26 / 70%);
+}
+
+.cs-menu-panel .cs-header__navigation {
+	margin-block-start: 1rem;
+}
+
+.cs-menu-panel .cs-menu,
+.cs-footer .cs-menu {
+	flex-direction: column;
+}
+
+html.cs-menu-active {
+	overflow: hidden;
+}
+
+@keyframes cs-panel-enter {
+	from { transform: translateX(100%); }
+	to { transform: translateX(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.cs-menu-panel[open] {
+		animation: none;
+	}
+}
+
+/* A largura acomoda os oito rótulos alemães com o logotipo e a chamada. */
+@media (min-width: 80em) {
+	.cs-header__inner {
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		gap: .9rem;
+	}
+
+	.cs-header__navigation {
+		order: 0;
+		width: auto;
+	}
+
+	.cs-header__navigation .cs-menu {
+		flex-wrap: nowrap;
+		gap: .5rem;
+		font-size: .875rem;
+		white-space: nowrap;
+	}
+
+	.cs-header__cta {
+		margin-inline-start: 0;
+		flex-shrink: 0;
+	}
+}
+
+.cs-footer {
+	padding-block: 2.5rem 1.5rem;
+}
+
+.cs-footer__columns {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, 10rem), 1fr));
+	gap: 1.5rem;
+}
+
+.cs-footer__label {
+	margin-block: 0 .4rem;
+	color: var(--cs-peach);
+	font-family: var(--cs-heading-font);
+	font-weight: 700;
+}
+
+.cs-footer__copyright {
+	margin-block: 1.5rem 0;
+	padding-block-start: 1rem;
+	border-top: 1px solid rgb(255 255 255 / 25%);
+	font-size: .875rem;
+}
+
+.cs-header .cs-header__cta:focus-visible,
+.cs-header .cs-menu-control:focus-visible {
+	outline-color: var(--cs-peach);
+}

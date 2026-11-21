@@ -1,0 +1,9 @@
+/* Ajustes restritos ao editor de blocos, carregados por add_editor_style(). */
+.editor-styles-wrapper {
+	line-height: 1.6;
+}
+
+.editor-styles-wrapper .wp-block-post-title {
+	font-family: Archivo, system-ui, sans-serif;
+	line-height: 1.15;
+}
