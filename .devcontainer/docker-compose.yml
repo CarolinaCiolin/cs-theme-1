@@ -1,0 +1,39 @@
+services:
+  wordpress:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: root
+      WORDPRESS_DB_PASSWORD: ""
+      WORDPRESS_DB_NAME: wordpress
+    volumes:
+      - wordpress-core:/var/www/html
+      - ..:/workspaces/cs-theme-1
+      - ../themes/cs-theme-1:/var/www/html/wp-content/themes/cs-theme-1
+      - ../themes/cs-theme-1-christoph:/var/www/html/wp-content/themes/cs-theme-1-christoph
+      - ../plugins/cs-blocks:/var/www/html/wp-content/plugins/cs-blocks
+    ports:
+      - "8080:80"
+    command: apache2-foreground
+
+  db:
+    image: mariadb:11.4
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: "yes"
+    volumes:
+      - wordpress-db:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mariadb-admin ping -h localhost -u root --protocol=tcp"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+volumes:
+  wordpress-core:
+  wordpress-db:

@@ -2,6 +2,8 @@
 Thumbs.db
 .vscode/
 .idea/
+.venv/
+references/
 *.log
 *.tmp
 *.bak
@@ -11,3 +13,9 @@ vendor/
 .env
 .env.*
 wp-config.php
+.devcontainer/data/
+wp-content/uploads/
+*.sql
+*.sql.gz
+tmp/
+temp/

@@ -1,0 +1,24 @@
+{
+  "name": "CS Theme 1 WordPress",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "wordpress",
+  "workspaceFolder": "/workspaces/cs-theme-1",
+  "forwardPorts": [8080],
+  "portsAttributes": {
+    "8080": {
+      "label": "WordPress preview",
+      "protocol": "http",
+      "onAutoForward": "openBrowser",
+      "visibility": "private"
+    }
+  },
+  "postCreateCommand": "setup-wordpress",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bmewburn.vscode-intelephense-client",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  }
+}

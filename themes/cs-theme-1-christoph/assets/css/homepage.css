@@ -1,0 +1,118 @@
+/* Estrutura visual da homepage do piloto; a copy real entra pelo Gutenberg. */
+.cs-homepage { --cs-home-space: clamp(3.5rem, 8vw, 8rem); background: var(--cs-cream); }
+.cs-home-shell { box-sizing: border-box; width: min(100%, var(--cs-width)); margin-inline: auto; padding-inline: var(--cs-gutter); }
+.cs-home-section { padding-block: var(--cs-home-space); }
+.cs-home-section:nth-child(even) { background: var(--cs-white); }
+.cs-home-hero { padding-block-start: clamp(4rem, 10vw, 9rem); }
+.cs-home-hero__grid, .cs-home-section .wp-block-columns { align-items: stretch; gap: clamp(1.5rem, 4vw, 5rem); }
+.cs-home-hero__content { align-self: center; }
+.cs-homepage h1, .cs-homepage h2, .cs-homepage h3 { font-family: var(--cs-heading-font); line-height: 1.1; }
+.cs-homepage h1 { max-width: 50rem; font-size: clamp(2.3rem, 5.6vw, 4.3rem); }
+.cs-homepage h2 { max-width: 52rem; font-size: clamp(1.7rem, 3.8vw, 2.7rem); }
+.cs-eyebrow, .cs-step-number { color: var(--cs-orange); font-family: var(--cs-heading-font); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.cs-schedule-placeholder, .cs-map-placeholder, .cs-svg-placeholder, .cs-portrait-placeholder { box-sizing: border-box; min-height: 16rem; padding: 1.5rem; border: 2px dashed var(--cs-orange); background: var(--cs-peach); display: grid; place-items: center; text-align: center; }
+.cs-schedule-placeholder { min-height: 30rem; }
+.cs-map-placeholder { min-height: 20rem; margin-block-start: 2rem; }
+.cs-portrait-placeholder { min-height: 24rem; background: var(--cs-white); }
+.cs-feature-grid, .cs-service-panels, .cs-steps-grid, .cs-pricing-grid { margin-block-start: 2rem; }
+.cs-feature-card, .cs-service-panel, .cs-step-card, .cs-price-card, .cs-quote-card { box-sizing: border-box; padding: clamp(1.25rem, 3vw, 2rem); border-radius: 1rem; background: var(--cs-white); }
+.cs-service-panel, .cs-price-card { border: 1px solid var(--cs-peach); }
+.cs-feature-card, .cs-step-card { background: var(--cs-peach); }
+.cs-quote-card { border-inline-start: .35rem solid var(--cs-orange); }
+.cs-tabs-placeholder, .cs-filters-placeholder { margin-block: 1.5rem; }
+.cs-tabs-placeholder .wp-block-navigation__container { gap: .5rem; }
+.cs-tabs-placeholder .wp-block-navigation-item__content, .cs-filters-placeholder .wp-block-button__link { padding: .65rem 1rem; border: 1px solid var(--cs-orange); border-radius: var(--cs-pill); color: var(--cs-text); text-decoration: none; }
+.cs-component-note { margin-block-start: 1rem; color: color-mix(in srgb, var(--cs-text) 70%, transparent); font-size: .875rem; font-style: italic; }
+.cs-home-cta { background: var(--cs-orange); }
+.cs-home-cta .cs-schedule-placeholder { margin-block-start: 2rem; background: var(--cs-peach); }
+@media (prefers-reduced-motion: reduce) { .cs-homepage * { scroll-behavior: auto !important; transition-duration: .01ms !important; } }
+
+/* Ajustes específicos da composição aprovada da homepage. */
+.cs-homepage .cs-lead { max-width: 45rem; font-size: clamp(1.05rem, 1.5vw, 1.25rem); }
+.cs-home-stats { color: var(--cs-graphite); font-family: var(--cs-heading-font); font-size: .95rem; }
+.cs-home-stats strong { color: var(--cs-orange); font-size: 1.5em; }
+.cs-home-testimonials { background: var(--cs-peach) !important; }
+.cs-home-pricing { background: var(--cs-graphite) !important; color: var(--cs-white); }
+.cs-home-pricing h2, .cs-home-pricing h3 { color: var(--cs-white); }
+.cs-home-pricing .cs-price-card { color: var(--cs-text); }
+.cs-home-pricing .cs-price-card--featured { border: 3px solid var(--cs-orange); }
+.cs-price { color: var(--cs-orange); font-family: var(--cs-heading-font); font-size: clamp(1.5rem, 3vw, 2.5rem); font-weight: 700; }
+.cs-price small { color: var(--cs-text); font-family: var(--cs-body-font); font-size: .45em; font-weight: 400; }
+.cs-homepage a:not(.wp-element-button) { color: inherit; font-weight: 700; }
+.cs-homepage .cs-home-cta { color: var(--cs-graphite); }
+.cs-homepage .cs-home-cta .wp-element-button { background: var(--cs-graphite); color: var(--cs-white); }
+.cs-homepage .cs-home-cta .wp-element-button:hover { background: var(--cs-white); color: var(--cs-graphite); }
+.cs-home-faq .wp-block-details { margin-block: .75rem; padding: 1rem 1.25rem; border: 1px solid var(--cs-peach); border-radius: .75rem; background: var(--cs-white); }
+.cs-home-faq summary { cursor: pointer; font-family: var(--cs-heading-font); font-weight: 700; }
+
+@media (min-width: 48rem) {
+	.cs-feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+	.cs-service-panels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	.cs-pricing-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/*
+ * O layout constrained do Gutenberg aplica contentSize (760px) a cada filho
+ * direto. A homepage usa seções de largura total com um shell interno de 1280px,
+ * como o HTML aprovado; estas regras corrigem somente a árvore da homepage.
+ */
+.cs-homepage > .cs-home-section {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: none;
+	margin-inline: 0;
+}
+
+.cs-homepage .cs-home-shell {
+	box-sizing: border-box;
+	width: 100%;
+	max-width: calc(var(--cs-width) + (2 * var(--cs-gutter)));
+	margin-inline: auto;
+	padding-inline: var(--cs-gutter);
+}
+
+.cs-homepage .wp-block-columns,
+.cs-homepage .wp-block-column {
+	min-width: 0;
+}
+
+.cs-homepage .wp-block-column,
+.cs-homepage p,
+.cs-homepage h1,
+.cs-homepage h2,
+.cs-homepage h3,
+.cs-homepage li {
+	word-break: normal;
+	overflow-wrap: normal;
+	hyphens: none;
+}
+
+.cs-homepage .cs-home-hero__grid,
+.cs-homepage .cs-feature-grid,
+.cs-homepage .cs-service-panels,
+.cs-homepage .cs-steps-grid,
+.cs-homepage .cs-pricing-grid {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr);
+	align-items: stretch;
+}
+
+@media (min-width: 48rem) {
+	.cs-homepage .cs-home-hero__grid {
+		grid-template-columns: minmax(0, 1.2fr) minmax(18rem, .8fr);
+	}
+
+	.cs-homepage .cs-feature-grid,
+	.cs-homepage .cs-service-panels,
+	.cs-homepage .cs-steps-grid,
+	.cs-homepage .cs-pricing-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (min-width: 64rem) {
+	.cs-homepage .cs-feature-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+	.cs-homepage .cs-service-panels { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+	.cs-homepage .cs-steps-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+	.cs-homepage .cs-pricing-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
