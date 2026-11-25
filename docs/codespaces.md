@@ -9,7 +9,9 @@ Esta configuração cria uma instalação WordPress isolada para desenvolvimento
 3. Quando a porta `8080` for encaminhada, abra a notificação **Open in Browser** ou a aba **Ports** e clique no endereço da porta `8080`.
 4. A porta está marcada como **Private**. Não altere essa visibilidade para compartilhar o preview.
 
-O endereço local do site é `http://localhost:8080`. O utilizador administrativo é `csadmin`; a password é gerada somente na primeira criação da instalação e exibida no terminal do container. Ela também fica temporariamente em `/tmp/cs-theme-1-wp-admin-password`, fora do workspace.
+Abra sempre a URL HTTPS apresentada pelo Codespaces para a porta `8080`; não use `localhost` no navegador. O `wp-config.php` calcula o host recebido pelo proxy e reconhece `X-Forwarded-Proto`, fazendo com que links internos, login, editor Gutenberg e assets usem a URL encaminhada.
+
+O utilizador administrativo é `csadmin`; a password é gerada somente na primeira criação da instalação e exibida no terminal do container. Ela também fica temporariamente em `/tmp/cs-theme-1-wp-admin-password`, fora do workspace.
 
 ## O que é inicializado
 
@@ -18,6 +20,7 @@ O endereço local do site é `http://localhost:8080`. O utilizador administrativ
 - `plugins/cs-blocks` é montado e ativado quando houver blocos válidos.
 - Uma página `Demo Homepage` é criada com o padrão Gutenberg `cs-theme-1-christoph/homepage` e definida como página inicial.
 - O banco MariaDB e o núcleo do WordPress ficam em volumes Docker nomeados, fora do Git.
+- O `postCreateCommand` espera o `wp-config.php` e uma resposta válida de `wp db check` antes de instalar ou configurar o WordPress.
 
 ## Parar, retomar e recriar
 
