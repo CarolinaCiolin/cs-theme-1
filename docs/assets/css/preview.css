@@ -274,6 +274,10 @@ details{border-bottom-color:#eadfd5}summary{color:var(--txt)}details p{color:#5b
 .pricing-section .amt{display:flex;align-items:baseline;gap:.4em;flex-wrap:wrap;color:#b8420a}
 .pricing-section .amt small{margin-left:.1em;line-height:1.2;color:#b8420a}
 .pricing-section .plan.top .amt,.pricing-section .plan.top .amt small{color:#fff}
+.menu-cta{display:none}
+.desktop-cta{display:inline-flex}
+.pricing-section .plan.top li::before{content:"✓";background:none;color:#fff;border:0;width:auto;height:auto;display:block;font:inherit;transform:none}
+.pricing-section .plan.top li{overflow-wrap:anywhere;word-break:normal;min-width:0}
 .menu-toggle{display:none;align-items:center;justify-content:center;flex-direction:column;gap:4px;width:42px;height:42px;padding:8px;border:1px solid #4a4a4a;border-radius:10px;background:#000;color:#fff;cursor:pointer}
 .menu-toggle span{display:block;width:20px;height:2px;border-radius:2px;background:currentColor;transition:transform .2s ease,opacity .2s ease}
 .menu-toggle[aria-expanded=true] span:nth-child(1){transform:translateY(6px) rotate(45deg)}
@@ -282,6 +286,11 @@ details{border-bottom-color:#eadfd5}summary{color:var(--txt)}details p{color:#5b
 .stats span{min-width:0}
 .ct{min-width:0}
 .ct a span{flex:1;min-width:0;overflow-wrap:break-word;word-break:normal}
+.ct a .email-text{display:inline-flex;flex:1;min-width:0;overflow-wrap:normal;word-break:normal}
+.ct a .email-text span{flex:0 1 auto;min-width:0}
+.pricing-section .plan.top{min-width:0;overflow:hidden}
+.pricing-section .plan.top ul,.pricing-section .plan.top li{min-width:0}
+.two>svg{min-width:0}
 @media(max-width:900px){
   .nav{height:auto;min-height:66px;flex-wrap:wrap;gap:10px;padding-top:10px;padding-bottom:10px}
   .logo{margin-right:auto;min-width:0}
@@ -291,9 +300,13 @@ details{border-bottom-color:#eadfd5}summary{color:var(--txt)}details p{color:#5b
   .nav>nav ul{display:grid;grid-template-columns:1fr;gap:2px;padding:4px 0 8px}
   .nav>nav a{display:block;padding:10px 4px;color:#fff}
   .nav>.btn{order:3;flex:1 0 100%;width:100%;min-height:44px;padding:11px 18px;white-space:nowrap;text-align:center}
+  .nav>.desktop-cta{display:none}
+  .nav>nav .menu-cta{display:flex;order:5;width:100%;margin:8px 0 4px;padding:12px 18px;white-space:nowrap}
   .stats{display:grid;grid-template-columns:1fr;justify-items:center;gap:16px;text-align:center}
   .stats span{display:flex;flex-direction:column;align-items:center;gap:2px}
   .stats b{margin-right:0}
   #ueber-mich .portrait-frame{order:-1}
+  #biomechanik .two>svg{order:-1}
 }
+@media(max-width:560px){.ct a .email-text{display:grid;grid-template-columns:1fr;line-height:1.35}.ct a .email-text span{display:block}}
 @media(prefers-reduced-motion:reduce){.menu-toggle span{transition:none}}
