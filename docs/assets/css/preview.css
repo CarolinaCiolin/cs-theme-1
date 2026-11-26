@@ -187,6 +187,7 @@ footer.s a{color:#fff}
 .pricing-section .plan.top .btn{background:#150a02;color:#fff;border-color:#150a02}
 .pricing-section .plan.top .btn:hover,.pricing-section .plan.top .btn:focus-visible{background:#fff;color:#150a02;border-color:#fff}
 @media(prefers-reduced-motion:reduce){.ct a{transition:none}.ct a:hover,.ct a:focus-visible{transform:none}}
+
 .tile:hover{box-shadow:0 18px 40px rgba(255,106,26,.16)}
 .feature-icon{display:grid;place-items:center;width:46px;height:46px;margin-bottom:18px;border-radius:14px;background:var(--peach);color:var(--rust);transition:.25s}
 .feature-icon svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
@@ -253,3 +254,18 @@ details{border-bottom-color:#eadfd5}summary{color:var(--txt)}details p{color:#5b
 .pricing-section .plan.top .btn{background:#150a02;color:#fff;border-color:#150a02}
 .pricing-section .plan.top .btn:hover,.pricing-section .plan.top .btn:focus-visible{background:#fff;color:#150a02;border-color:#fff}
 @media(prefers-reduced-motion:reduce){.ct a{transition:none}.ct a:hover,.ct a:focus-visible{transform:none}}
+
+/* Round 5: final preview-only visual refinements. */
+#kontakt.contact-section{background:#fff;color:var(--txt)}
+.testimonial-stars{color:#ff6a1a;font-size:clamp(1.25rem,2vw,1.5rem);letter-spacing:.12em;line-height:1;margin-bottom:18px}
+.stats b{color:#ff6a1a}
+#erfahrung .tile{background:rgba(255,255,255,.65);border-color:rgba(255,255,255,.86);box-shadow:0 12px 30px rgba(61,40,24,.08);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+#erfahrung .tile:hover{background:rgba(255,255,255,.86);border-color:#ff6a1a;transform:translateY(-5px);box-shadow:0 18px 40px rgba(255,106,26,.18)}
+.pricing-section .amt,.pricing-section .amt small{color:#ff6a1a}
+.pricing-section .plan.top{color:#fff}
+.pricing-section .plan.top h3,.pricing-section .plan.top .amt,.pricing-section .plan.top .amt small{color:#fff}
+.pricing-section .plan.top li{padding-left:28px;border-top-color:rgba(255,255,255,.32)}
+.pricing-section .plan.top li::before{content:"✓";display:grid;place-items:center;width:18px;height:18px;border:0;border-radius:50%;background:rgba(255,255,255,.9);color:#ff6a1a;font:800 .75rem/1 Archivo, sans-serif;transform:none;top:10px}
+.pricing-section .plan.top .btn{background:#150a02;color:#fff;border-color:#150a02}
+.pricing-section .plan.top .btn:hover,.pricing-section .plan.top .btn:focus-visible{background:#fff;color:#150a02;border-color:#fff}
+@media(prefers-reduced-motion:reduce){#erfahrung .tile{transition:none}#erfahrung .tile:hover{transform:none}}
