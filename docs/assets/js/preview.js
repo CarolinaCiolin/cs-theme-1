@@ -13,4 +13,5 @@ function go(d){var w=sl[0].offsetWidth+18,n=cur()+d;if(n<0)n=sl.length-1;if(n>=s
 tr.addEventListener('scroll',upd,{passive:true});upd();
 document.getElementById('pv').onclick=function(){go(-1)};document.getElementById('nx').onclick=function(){go(1)};
 $('.chip').forEach(function(c){c.onclick=function(){$('.chip').forEach(function(x){x.setAttribute('aria-pressed',x==c)});$('.plan').forEach(function(p){p.hidden=c.dataset.f!='all'&&p.dataset.c!=c.dataset.f})}});
+$('details').forEach(function(d){d.addEventListener('toggle',function(){if(!d.open)return;$('details').forEach(function(other){if(other!==d)other.open=false})})});
 $('form.f').forEach(function(f){f.addEventListener('submit',function(ev){ev.preventDefault();var d=new FormData(f);location.href='mailto:biomechanik.wimmersberger@gmail.com?subject='+encodeURIComponent('Gratis-Coaching Anfrage')+'&body='+encodeURIComponent(d.get('m')+'\n\n'+d.get('n')+' ('+d.get('e')+')')})});
