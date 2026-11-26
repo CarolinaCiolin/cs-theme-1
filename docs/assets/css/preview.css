@@ -119,6 +119,27 @@ h1 strong{display:block;font:inherit;color:inherit}
 @media(max-width:860px){.about-grid{grid-template-columns:1fr;gap:34px}.portrait-placeholder{min-height:340px}}
 @media(prefers-reduced-motion:reduce){.steps .st,.steps .st b,.ar{transition:none}.steps .st:hover,.steps .st:focus-within{transform:none}.steps .st:hover b,.steps .st:focus-within b{transform:none}}
 
+/* Final Round 4 cascade: keep these five visual tests effective. */
+#ueber-mich.about-section{background:#fff;color:var(--txt)}
+#faq{background:#fff;color:var(--txt)}
+#faq details p{color:#5b5651}
+.steps-section{background:var(--ink);color:#ecebe8}
+.steps-section .head h2{color:#ecebe8}
+.steps-section .head .m{color:var(--ash)}
+.steps-section .st{background:#fff;color:var(--txt);border-color:#f0d9c4}
+.steps-section .st p{color:#4a4a4f}
+.ct a{padding:8px 10px;margin-inline:-10px;min-width:0;max-width:100%;border-radius:10px;transition:background-color .22s ease,color .22s ease,transform .22s ease}
+.ct a span{min-width:0;overflow-wrap:anywhere}
+.ct a:hover,.ct a:focus-visible{background:var(--peach);color:var(--rust);transform:translateX(3px);outline:3px solid var(--amber);outline-offset:2px}
+.ct a:hover .contact-icon,.ct a:focus-visible .contact-icon{color:var(--ember)}
+.pricing-section .plan.top{background:linear-gradient(135deg,#ff6a1a,#c2410c);color:#150a02;border-color:#ff6a1a;box-shadow:0 18px 38px rgba(194,65,12,.25)}
+.pricing-section .plan.top h3,.pricing-section .plan.top .amt,.pricing-section .plan.top .amt small{color:#150a02}
+.pricing-section .plan.top li{border-top-color:rgba(21,10,2,.2)}
+.pricing-section .plan.top li::before{border-color:#150a02}
+.pricing-section .plan.top .btn{background:#150a02;color:#fff;border-color:#150a02}
+.pricing-section .plan.top .btn:hover,.pricing-section .plan.top .btn:focus-visible{background:#fff;color:#150a02;border-color:#fff}
+@media(prefers-reduced-motion:reduce){.ct a{transition:none}.ct a:hover,.ct a:focus-visible{transform:none}}
+
 /* Round 2 refinements. */
 #erfahrung{background:var(--peach);color:var(--txt)}
 #erfahrung .tile{background:#fff;border-color:#f0d9c4}
@@ -143,6 +164,29 @@ footer.s a{color:#fff}
 @media(max-width:860px){.portrait-frame,.portrait-frame img{min-height:340px}}
 .about-grid>*{min-width:0}
 .about-grid .map{width:100%;min-width:0}
+
+/* Round 4: isolated light sections, Claude step colors and 699 € test. */
+#ueber-mich.about-section{background:#fff;color:var(--txt)}
+#ueber-mich.about-section .portrait-frame{background:#fff;border-color:#eee5de}
+#faq{background:#fff;color:var(--txt)}
+#faq details{border-bottom-color:#eadfd5}
+#faq details p{color:#5b5651}
+.steps-section{background:var(--ink);color:#ecebe8}
+.steps-section .head h2{color:#ecebe8}
+.steps-section .head .m{color:var(--ash)}
+.steps-section .st{background:#fff;color:var(--txt);border-color:#f0d9c4}
+.steps-section .st p{color:#4a4a4f}
+.ct a{padding:8px 10px;margin-inline:-10px;border-radius:10px;transition:background-color .22s ease,color .22s ease,transform .22s ease}
+.ct a:hover,.ct a:focus-visible{background:var(--peach);color:var(--rust);transform:translateX(3px)}
+.ct a:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.ct a:hover .contact-icon,.ct a:focus-visible .contact-icon{color:var(--ember)}
+.pricing-section .plan.top{background:linear-gradient(135deg,#ff6a1a,#c2410c);color:#150a02;border-color:#ff6a1a;box-shadow:0 18px 38px rgba(194,65,12,.25)}
+.pricing-section .plan.top h3,.pricing-section .plan.top .amt,.pricing-section .plan.top .amt small{color:#150a02}
+.pricing-section .plan.top li{border-top-color:rgba(21,10,2,.2)}
+.pricing-section .plan.top li::before{border-color:#150a02}
+.pricing-section .plan.top .btn{background:#150a02;color:#fff;border-color:#150a02}
+.pricing-section .plan.top .btn:hover,.pricing-section .plan.top .btn:focus-visible{background:#fff;color:#150a02;border-color:#fff}
+@media(prefers-reduced-motion:reduce){.ct a{transition:none}.ct a:hover,.ct a:focus-visible{transform:none}}
 .tile:hover{box-shadow:0 18px 40px rgba(255,106,26,.16)}
 .feature-icon{display:grid;place-items:center;width:46px;height:46px;margin-bottom:18px;border-radius:14px;background:var(--peach);color:var(--rust);transition:.25s}
 .feature-icon svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
@@ -188,3 +232,24 @@ details{border-bottom-color:#eadfd5}summary{color:var(--txt)}details p{color:#5b
 .pricing-section .plan{background:#fff;color:var(--txt);border-color:#eadfd5}
 .pricing-section .plan.top{background:var(--peach);border-color:var(--ember)}
 @media(prefers-reduced-motion:reduce){.steps .st,.steps .st b,.ar{transition:none}.steps .st:hover,.steps .st:focus-within{transform:none}.steps .st:hover b,.steps .st:focus-within b{transform:none}}
+
+/* Effective final overrides for Round 4. */
+#ueber-mich.about-section{background:#fff;color:var(--txt)}
+#faq{background:#fff;color:var(--txt)}
+#faq details p{color:#5b5651}
+.steps-section{background:var(--ink);color:#ecebe8}
+.steps-section .head h2{color:#ecebe8}
+.steps-section .head .m{color:var(--ash)}
+.steps-section .st{background:#fff;color:var(--txt);border-color:#f0d9c4}
+.steps-section .st p{color:#4a4a4f}
+.ct a{padding:8px 10px;margin-inline:-10px;min-width:0;max-width:100%;border-radius:10px;transition:background-color .22s ease,color .22s ease,transform .22s ease}
+.ct a span{min-width:0;overflow-wrap:anywhere}
+.ct a:hover,.ct a:focus-visible{background:var(--peach);color:var(--rust);transform:translateX(3px);outline:3px solid var(--amber);outline-offset:2px}
+.ct a:hover .contact-icon,.ct a:focus-visible .contact-icon{color:var(--ember)}
+.pricing-section .plan.top{background:linear-gradient(135deg,#ff6a1a,#c2410c);color:#150a02;border-color:#ff6a1a;box-shadow:0 18px 38px rgba(194,65,12,.25)}
+.pricing-section .plan.top h3,.pricing-section .plan.top .amt,.pricing-section .plan.top .amt small{color:#150a02}
+.pricing-section .plan.top li{border-top-color:rgba(21,10,2,.2)}
+.pricing-section .plan.top li::before{border-color:#150a02}
+.pricing-section .plan.top .btn{background:#150a02;color:#fff;border-color:#150a02}
+.pricing-section .plan.top .btn:hover,.pricing-section .plan.top .btn:focus-visible{background:#fff;color:#150a02;border-color:#fff}
+@media(prefers-reduced-motion:reduce){.ct a{transition:none}.ct a:hover,.ct a:focus-visible{transform:none}}
