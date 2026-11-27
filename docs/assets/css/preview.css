@@ -190,7 +190,7 @@ footer.s a{color:#fff}
 
 .tile:hover{box-shadow:0 18px 40px rgba(255,106,26,.16)}
 .feature-icon{display:grid;place-items:center;width:46px;height:46px;margin-bottom:18px;border-radius:14px;background:var(--peach);color:var(--rust);transition:.25s}
-.feature-icon svg{width:26px;height:26px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.feature-icon img{display:block;width:28px;height:28px;object-fit:contain}
 .tile:hover .feature-icon{background:var(--ember);color:#150a02;transform:translateY(-2px) rotate(-3deg)}
 .peach{background:var(--peach);color:var(--txt)}
 .peach .head h2,.light .head h2{color:var(--txt)}
